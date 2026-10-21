@@ -51,6 +51,8 @@ int main(void)
         return 0;
     }
 
+    printk("Hardware inicializado!\n");
+
     return 0;
 
 }
@@ -68,7 +70,7 @@ void led1_thread_func(void *arg1, void *arg2, void *arg3)
 {
     while (1){
         gpio_pin_toggle_dt(&led1);
-        k_msleep(500);
+        k_msleep(350);
 
     }
 }
