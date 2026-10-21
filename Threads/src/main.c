@@ -7,7 +7,7 @@
 #define PRIORITY_LED1 5
 
 #define PERIOD_LED0_MS 1000
-#define PERIOD_LED1_MS 500   
+#define PERIOD_LED1_MS 350
 
 #define LED0_NODE DT_ALIAS(led0)
 #define LED1_NODE DT_ALIAS(led1)
@@ -61,16 +61,15 @@ void led0_thread_func(void *arg1, void *arg2, void *arg3)
 {
     while (1){
         gpio_pin_toggle_dt(&led0);
-        k_msleep(1000);
+        k_msleep(PERIOD_LED0_MS);
 
     }
 }
 
 void led1_thread_func(void *arg1, void *arg2, void *arg3)
-{
     while (1){
         gpio_pin_toggle_dt(&led1);
-        k_msleep(350);
+        k_msleep(PERIOD_LED1_MS);
 
     }
 }
