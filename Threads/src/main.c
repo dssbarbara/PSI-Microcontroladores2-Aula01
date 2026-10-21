@@ -59,7 +59,7 @@ void led0_thread_func(void *arg1, void *arg2, void *arg3)
 {
     while (1){
         gpio_pin_toggle_dt(&led0);
-        k_msleep(PERIOD_LED0_MS);
+        k_msleep(1000);
 
     }
 }
@@ -68,7 +68,7 @@ void led1_thread_func(void *arg1, void *arg2, void *arg3)
 {
     while (1){
         gpio_pin_toggle_dt(&led1);
-        k_msleep(PERIOD_LED1_MS);
+        k_msleep(500);
 
     }
 }
